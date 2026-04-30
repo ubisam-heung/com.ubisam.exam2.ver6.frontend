@@ -146,7 +146,7 @@
 
              <entity-field
                 class="ma-2"
-                v-model="editForm.busStopsLinks"
+                v-model="editForm.busStopLinks"
                 :rules="[$rules.requried]"
                 :items="busStopsItems"
                 :item-selected="editForm.busStops"
