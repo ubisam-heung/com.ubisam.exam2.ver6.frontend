@@ -25,10 +25,11 @@ declare module 'vue-router/auto-routes' {
     '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
     '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
     '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/accounts' | '/contents/busDrivers' | '/contents/busRoutes' | '/contents/busStops' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'>,
+    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/accounts' | '/contents/busDrivers' | '/contents/busRoutes' | '/contents/busStops' | '/contents/buses' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'>,
     '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
     '/contents/accounts': RouteRecordInfo<'/contents/accounts', '/contents/accounts', Record<never, never>, Record<never, never>>,
     '/contents/busDrivers': RouteRecordInfo<'/contents/busDrivers', '/contents/busDrivers', Record<never, never>, Record<never, never>>,
+    '/contents/buses': RouteRecordInfo<'/contents/buses', '/contents/buses', Record<never, never>, Record<never, never>>,
     '/contents/busRoutes': RouteRecordInfo<'/contents/busRoutes', '/contents/busRoutes', Record<never, never>, Record<never, never>>,
     '/contents/busStops': RouteRecordInfo<'/contents/busStops', '/contents/busStops', Record<never, never>, Record<never, never>>,
     '/contents/repairs': RouteRecordInfo<'/contents/repairs', '/contents/repairs', Record<never, never>, Record<never, never>>,
@@ -76,7 +77,7 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/apps/02_bus/pages/contents.vue': {
-      routes: '/contents' | '/contents/' | '/contents/accounts' | '/contents/busDrivers' | '/contents/busRoutes' | '/contents/busStops' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'
+      routes: '/contents' | '/contents/' | '/contents/accounts' | '/contents/busDrivers' | '/contents/buses' | '/contents/busRoutes' | '/contents/busStops' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'
       views: 'default'
     }
     'src/apps/02_bus/pages/contents/index.vue': {
@@ -89,6 +90,10 @@ declare module 'vue-router/auto-routes' {
     }
     'src/apps/02_bus/pages/contents/busDrivers.vue': {
       routes: '/contents/busDrivers'
+      views: never
+    }
+    'src/apps/02_bus/pages/contents/buses.vue': {
+      routes: '/contents/buses'
       views: never
     }
     'src/apps/02_bus/pages/contents/busRoutes.vue': {

@@ -95,6 +95,10 @@ export default {
       type: Array,
       default: [],
     },
+    itemEditable: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data: () => ({
@@ -114,7 +118,7 @@ export default {
 
   mounted() {
     console.log("mounted", this.modelValue);
-
+    this.editable = this.itemEditable;
     this.headers = this.itemHeaders.concat(
       { key: "actions", title: "Actions", align: "end", width:"20%" }
     );
