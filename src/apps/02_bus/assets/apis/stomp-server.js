@@ -1,14 +1,16 @@
-import $base from "@/plugins/apis.js"
-import $userinfo from "@@/assets/stores/userinfo.js"
+import $base from "@/plugins/apis.js";
+import $userinfo from "@@/assets/stores/userinfo.js";
+import $stompjs from "stompjs";
 
-const name = "[/assets/apis/oauth2-server.js]";
+
+const name = "[/assets/apis/stomp-server.js]";
 
 const $server = {
 
   api: {
     execute(optionBuilder){
       return $base.meta
-        .env("VITE_OAUTH2_SERVER")
+        .env("VITE_STOMP_SERVER", "VITE_OAUTH2_SERVER")
         .then(optionBuilder)
         .then((e) => {
           return $base.api.execute(e);
@@ -21,15 +23,16 @@ const $server = {
         });
     },
 
-    url(env, path){
-      let paths = (path != null) ? path : "";
-      return `${env["VITE_OAUTH2_SERVER"]}${paths}`;
+    url(env, path) {
+      let paths = (path != null) ? path : ""
+      return `${env["VITE_STOMP_SERVER"]}${paths}`;
     },
 
     token(env){
-      let token = $userinfo.computed.token.get();
+      let flag = env["VITE_OAUTH2_SERVER"] != undefined;
+      let token = flag ? $userinfo.computed.token.get() : undefined;
       return token;
-    },
+    },  
 
     headers(env, headers){
       let token = $server.api.token(env);
