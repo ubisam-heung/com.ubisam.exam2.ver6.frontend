@@ -25,7 +25,8 @@ declare module 'vue-router/auto-routes' {
     '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
     '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
     '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>>,
+    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/'>,
+    '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -68,7 +69,11 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/apps/02_bus/pages/contents.vue': {
-      routes: '/contents'
+      routes: '/contents' | '/contents/'
+      views: 'default'
+    }
+    'src/apps/02_bus/pages/contents/index.vue': {
+      routes: '/contents/'
       views: never
     }
   }
