@@ -20,7 +20,8 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[...path]': RouteRecordInfo<'/[...path]', '/:path(.*)', { path: ParamValue<true> }, { path: ParamValue<false> }>,
-    '/accounts': RouteRecordInfo<'/accounts', '/accounts', Record<never, never>, Record<never, never>>,
+    '/accounts': RouteRecordInfo<'/accounts', '/accounts', Record<never, never>, Record<never, never>, '/accounts/login'>,
+    '/accounts/login': RouteRecordInfo<'/accounts/login', '/accounts/login', Record<never, never>, Record<never, never>>,
     '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>>,
   }
 
@@ -44,7 +45,11 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/apps/02_bus/pages/accounts.vue': {
-      routes: '/accounts'
+      routes: '/accounts' | '/accounts/login'
+      views: 'default'
+    }
+    'src/apps/02_bus/pages/accounts/login.vue': {
+      routes: '/accounts/login'
       views: never
     }
     'src/apps/02_bus/pages/contents.vue': {
