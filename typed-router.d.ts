@@ -25,9 +25,10 @@ declare module 'vue-router/auto-routes' {
     '/accounts/logoff': RouteRecordInfo<'/accounts/logoff', '/accounts/logoff', Record<never, never>, Record<never, never>>,
     '/accounts/logon': RouteRecordInfo<'/accounts/logon', '/accounts/logon', Record<never, never>, Record<never, never>>,
     '/accounts/logout': RouteRecordInfo<'/accounts/logout', '/accounts/logout', Record<never, never>, Record<never, never>>,
-    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/accounts' | '/contents/sessions' | '/contents/userAccount'>,
+    '/contents': RouteRecordInfo<'/contents', '/contents', Record<never, never>, Record<never, never>, '/contents/' | '/contents/accounts' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'>,
     '/contents/': RouteRecordInfo<'/contents/', '/contents', Record<never, never>, Record<never, never>>,
     '/contents/accounts': RouteRecordInfo<'/contents/accounts', '/contents/accounts', Record<never, never>, Record<never, never>>,
+    '/contents/repairs': RouteRecordInfo<'/contents/repairs', '/contents/repairs', Record<never, never>, Record<never, never>>,
     '/contents/sessions': RouteRecordInfo<'/contents/sessions', '/contents/sessions', Record<never, never>, Record<never, never>>,
     '/contents/userAccount': RouteRecordInfo<'/contents/userAccount', '/contents/userAccount', Record<never, never>, Record<never, never>>,
   }
@@ -72,7 +73,7 @@ declare module 'vue-router/auto-routes' {
       views: never
     }
     'src/apps/02_bus/pages/contents.vue': {
-      routes: '/contents' | '/contents/' | '/contents/accounts' | '/contents/sessions' | '/contents/userAccount'
+      routes: '/contents' | '/contents/' | '/contents/accounts' | '/contents/repairs' | '/contents/sessions' | '/contents/userAccount'
       views: 'default'
     }
     'src/apps/02_bus/pages/contents/index.vue': {
@@ -81,6 +82,10 @@ declare module 'vue-router/auto-routes' {
     }
     'src/apps/02_bus/pages/contents/accounts.vue': {
       routes: '/contents/accounts'
+      views: never
+    }
+    'src/apps/02_bus/pages/contents/repairs.vue': {
+      routes: '/contents/repairs'
       views: never
     }
     'src/apps/02_bus/pages/contents/sessions.vue': {
